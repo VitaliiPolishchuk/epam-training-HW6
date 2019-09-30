@@ -8,7 +8,10 @@ public class FirstTask {
     }
 
     public static Set<Map.Entry<Integer,Integer>> count(List<Integer> list){
-        TreeMap<Integer, Integer> map = new TreeMap<>();
+        if(list == null) {
+            return null;
+        }
+        HashMap<Integer, Integer> map = new HashMap<>();
         for(Integer val : list){
             map.put(val, map.getOrDefault(val, 0) + 1);
         }
